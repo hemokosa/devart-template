@@ -1,1 +1,0 @@
-Mission API を使って開発された Mission アプリのリポジトリです。
