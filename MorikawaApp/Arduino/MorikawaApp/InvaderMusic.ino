@@ -91,24 +91,30 @@ void InvaderMusic_loop(void)
   Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_PY1, &raw);        
   freq = raw2freq(raw);
   Morikawa.playFrequency(freq, duration/2.0);
-  Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_MY1, &raw);        
+  Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_PY2, &raw);        
   freq = raw2freq(raw);
   Morikawa.playFrequency(freq, duration/2.0);
 
-  Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_PY2, &raw);        
+  Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_MY1, &raw);        
   freq = raw2freq(raw);
   Morikawa.playFrequency(freq, duration/2.0);
   Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_MY2, &raw);        
   freq = raw2freq(raw);
   Morikawa.playFrequency(freq, duration/2.0);
 
-  Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_PZ, &raw);        
+  Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_PZ1, &raw);        
   freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration);
+  Morikawa.playFrequency(freq, duration/2.0);
+  Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_PZ2, &raw);        
+  freq = raw2freq(raw);
+  Morikawa.playFrequency(freq, duration/2.0);
 
-  Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_MZ, &raw);        
+  Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_MZ1, &raw);        
   freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration);
+  Morikawa.playFrequency(freq, duration/2.0);
+  Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_MZ2, &raw);        
+  freq = raw2freq(raw);
+  Morikawa.playFrequency(freq, duration/2.0);
 
 
   Morikawa.getTelemetryTemperature(TEMPERATURE_MAINCPU, &raw);        
