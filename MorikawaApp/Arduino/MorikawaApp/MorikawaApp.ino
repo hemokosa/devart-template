@@ -59,7 +59,7 @@ enum {
     APP_INVADER_BOT,
     APP_INVADER_MUSIC,
     APP_INVADER_CAM,
-    APP_SECRET_ICON,
+    APP_INVADER_VM,
     APP_TELEMETRY_DUMP,
     MGR_ERASE_SELFTESTLOG       = 128,
     MGR_FORMAT_EEPROM,
@@ -110,8 +110,8 @@ void setup(void)
             case APP_INVADER_CAM:
                 REGISTER_APP(InvaderCam)
                 break;
-            case APP_SECRET_ICON:
-                REGISTER_APP(SecretIcon)
+            case APP_INVADER_VM:
+                REGISTER_APP(InvaderVM)
                 break;
             case APP_TELEMETRY_DUMP:
                 REGISTER_APP(TelemetryDump)
