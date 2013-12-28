@@ -56,8 +56,25 @@ void InvaderMusic_loop(void)
 
   // set tempo
   duration = 1000;
+  
+  // Theme of INVADER  
+  static NoteSequence const g_note[] PROGMEM = {
+    {NOTE_B4, DURATION_04},
+    {NOTE_G4, DURATION_04},
+    {NOTE_A4, DURATION_08},
+    {NOTE_REST, DURATION_08},
+    {NOTE_A4, DURATION_04},
+    {NOTE_D5, DURATION_04},
+    {NOTE_E5, DURATION_04},
+    {NOTE_D5, DURATION_02},
+    {NOTE_REST, DURATION_01},
+    {NOTE_REST, DURATION_01},
+    {NOTE_END}
+  };
 
-  // get OBC time
+  Morikawa.playNotePGM(g_note);
+
+  // intro : OBC time
   Morikawa.getTelemetryTime(TIME_OBCTIME, &obcTime);
 
   raw = lowByte(obcTime >> 24);
@@ -78,39 +95,35 @@ void InvaderMusic_loop(void)
 
   Morikawa.playFrequency(FREQUENCY_REST, duration);
 
-  // intro : Gyro and Magnet
+  // group A : Gyro and Magnet
   Morikawa.getTelemetryGyro(GYRO_X, &raw);        
   freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration/3.0);
+  Morikawa.playFrequency(freq, duration/2.0);
 
   Morikawa.getTelemetryGyro(GYRO_Y, &raw);        
   freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration/3.0);
+  Morikawa.playFrequency(freq, duration/2.0);
 
   Morikawa.getTelemetryGyro(GYRO_Z, &raw);        
   freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration/3.0);
+  Morikawa.playFrequency(freq, duration/2.0);
 
   Morikawa.getTelemetryMagnet(MAGNET_X, &raw);        
   freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration/3.0);
+  Morikawa.playFrequency(freq, duration/2.0);
 
   Morikawa.getTelemetryMagnet(MAGNET_Y, &raw);        
   freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration/3.0);
+  Morikawa.playFrequency(freq, duration/2.0);
 
   Morikawa.getTelemetryMagnet(MAGNET_Z, &raw);        
   freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration/3.0);
-
-  Morikawa.getTelemetryTemperature(TEMPERATURE_POWERCPU, &raw);        
-  freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration);
+  Morikawa.playFrequency(freq, duration/2.0);
 
   Morikawa.playFrequency(FREQUENCY_REST, duration);
 
 
-  // group A : Voltage
+  // group B : Voltage
   Morikawa.getTelemetryCurrent(VOLTAGE_BUS, &raw);        
   freq = raw2freq(raw);
   Morikawa.playFrequency(freq, duration/3.0);
@@ -123,11 +136,9 @@ void InvaderMusic_loop(void)
   freq = raw2freq(raw);
   Morikawa.playFrequency(freq, duration/3.0);
 
-
   Morikawa.playFrequency(FREQUENCY_REST, duration);
 
-
-  // group B : Current
+  // group C : Current
   Morikawa.getTelemetryCurrent(CURRENT_BUS, &raw);        
   freq = raw2freq(raw);
   Morikawa.playFrequency(freq, duration/3.0);
@@ -140,9 +151,7 @@ void InvaderMusic_loop(void)
   freq = raw2freq(raw);
   Morikawa.playFrequency(freq, duration/3.0);
 
-
-
-
+  Morikawa.playFrequency(FREQUENCY_REST, duration);
 
 
   Morikawa.getTelemetryCurrent(CURRENT_POWERCPU, &raw);        
@@ -160,79 +169,105 @@ void InvaderMusic_loop(void)
   Morikawa.playFrequency(FREQUENCY_REST, duration);
 
 
-  // group C : Tempature
+  Morikawa.getTelemetryCurrent(CURRENT_BATTERYHEATER, &raw);        
+  freq = raw2freq(raw);
+  Morikawa.playFrequency(freq, duration);
+
+  Morikawa.playFrequency(FREQUENCY_REST, duration);
+
+
+  Morikawa.getTelemetryCurrent(CURRENT_TX, &raw);        
+  freq = raw2freq(raw);
+  Morikawa.playFrequency(freq, duration/3.0);
+
+  Morikawa.getTelemetryCurrent(CURRENT_CW, &raw);        
+  freq = raw2freq(raw);
+  Morikawa.playFrequency(freq, duration/3.0);
+
+  Morikawa.getTelemetryCurrent(CURRENT_RX, &raw);        
+  freq = raw2freq(raw);
+  Morikawa.playFrequency(freq, duration/3.0);
+
+  Morikawa.playFrequency(FREQUENCY_REST, duration);
+
+
+  // group D : Tempature
   Morikawa.getTelemetryTemperature(TEMPERATURE_BATTERY1, &raw);
   freq = raw2freq(raw);
   Morikawa.playFrequency(freq, duration/3.0);
+  
   Morikawa.getTelemetryTemperature(TEMPERATURE_BATTERY2, &raw);
   freq = raw2freq(raw);
   Morikawa.playFrequency(freq, duration/3.0);
+  
   Morikawa.getTelemetryTemperature(TEMPERATURE_BATTERY3, &raw);
   freq = raw2freq(raw);
   Morikawa.playFrequency(freq, duration/3.0);
 
+  Morikawa.playFrequency(FREQUENCY_REST, duration);
+
+
   Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_PX, &raw);        
   freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration);
+  Morikawa.playFrequency(freq, duration/2.0);
 
   Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_MX, &raw);        
   freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration);
+  Morikawa.playFrequency(freq, duration/2.0);
 
   Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_PY1, &raw);        
   freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration/2.0);
+  Morikawa.playFrequency(freq, duration/4.0);
   Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_PY2, &raw);        
   freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration/2.0);
+  Morikawa.playFrequency(freq, duration/4.0);
 
   Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_MY1, &raw);        
   freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration/2.0);
+  Morikawa.playFrequency(freq, duration/4.0);
   Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_MY2, &raw);        
   freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration/2.0);
+  Morikawa.playFrequency(freq, duration/4.0);
 
   Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_PZ1, &raw);        
   freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration/2.0);
+  Morikawa.playFrequency(freq, duration/4.0);
   Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_PZ2, &raw);        
   freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration/2.0);
+  Morikawa.playFrequency(freq, duration/4.0);
 
   Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_MZ1, &raw);        
   freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration/2.0);
+  Morikawa.playFrequency(freq, duration/4.0);
 
   Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_MZ2, &raw);        
   freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration/2.0);
+  Morikawa.playFrequency(freq, duration/4.0);
 
-
-
-  Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_MZ2, &raw);        
-  freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration/2.0);
-
-  Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_MZ2, &raw);        
-  freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration/2.0);
-
-  Morikawa.getTelemetryTemperature(TEMPERATURE_SOLAR_MZ2, &raw);        
-  freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration/2.0);
-
-
-  // Interval
   Morikawa.playFrequency(FREQUENCY_REST, duration);
 
   // Coda
   Morikawa.getTelemetryTemperature(TEMPERATURE_POWERCPU, &raw);        
   freq = raw2freq(raw);
-  Morikawa.playFrequency(freq, duration*4.0);
+  Morikawa.playFrequency(freq, duration);
+ 
+  Morikawa.getTelemetryTemperature(TEMPERATURE_MAINCPU, &raw);        
+  freq = raw2freq(raw);
+  Morikawa.playFrequency(freq, duration);
+ 
+  Morikawa.getTelemetryTemperature(TEMPERATURE_MISSIONCPU, &raw);        
+  freq = raw2freq(raw);
+  Morikawa.playFrequency(freq, duration);
 
-  // Interval
-  Morikawa.playFrequency(FREQUENCY_REST, duration*4.0);
+  Morikawa.getTelemetryTemperature(TEMPERATURE_CWTX, &raw);        
+  freq = raw2freq(raw);
+  Morikawa.playFrequency(freq, duration);
+
+  Morikawa.getTelemetryTemperature(TEMPERATURE_RX, &raw);        
+  freq = raw2freq(raw);
+  Morikawa.playFrequency(freq, duration);
+ 
+  Morikawa.playFrequency(FREQUENCY_REST, duration);
 
   return;
 }
