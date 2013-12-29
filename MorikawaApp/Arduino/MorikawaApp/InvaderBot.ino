@@ -350,9 +350,9 @@ static char const invaderbot_reply_110[] PROGMEM = "HAVE YOU BEEN TO MORIKAWA RE
 static char const invaderbot_reply_111[] PROGMEM = "SAY, DO YOU HAVE ANY QUESTIONS TO ASK ME?";
 static char const invaderbot_reply_112[] PROGMEM = "I AM A SPACE ARTIST. DO YOU KNOW TAMA ART UNIVERSITY?";
 static char const invaderbot_reply_113[] PROGMEM = "HOW ART YOU? I AM ORBITING AROUND THE EARTH.";
-static char const invaderbot_reply_114[] PROGMEM = "I'M NOT SURE WHERE AM I. CAN YOU SEE ME?";
+static char const invaderbot_reply_114[] PROGMEM = "I'M LISTENING TO YOU. SEE ME, FEEL ME.";
 static char const invaderbot_reply_115[] PROGMEM = "I WANT TO CONNECT YOUR EVERYDAY LIFE TO THE UNIVERSE";
-static char const invaderbot_reply_116[] PROGMEM = "CAN YOU GET MY TELEMETRY DATA? HOW IS IT?";
+static char const invaderbot_reply_116[] PROGMEM = "CAN YOU HEAR MY TELEMETRY DATA? HOW IS IT?";
 static char const invaderbot_reply_117[] PROGMEM = "SPACE IS THE PLACE. IT IS REALLY EXCITING!";
 static PGM_P invaderbot_reply[] PROGMEM = {
     invaderbot_reply_000,
