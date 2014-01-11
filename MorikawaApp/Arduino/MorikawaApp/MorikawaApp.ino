@@ -44,11 +44,11 @@
 
 #include <MorikawaSDK.h>
 
-#define TARGET_BUILD_DEBUG
+//#define TARGET_BUILD_DEBUG
 
 #define REGISTER_APP(param)\
-    g_setup = &param##_setup;\
-    g_loop = &param##_loop;
+g_setup = &param##_setup;\
+g_loop = &param##_loop;
 
 enum {
     APP_SELF_TEST               = 0,
