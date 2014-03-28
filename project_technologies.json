@@ -1,16 +1,18 @@
 {
     "technologies": {
         "apis": [
-            "insert apis"
+            "google maps"
+            "twitter"
         ],
         "platforms": [
-            "insert platforms"
+            "arduino"
         ],
         "toolkits": [
-            "insert toolkits"
+            "openframeworks"
         ]
     },
     "themes": [
-        "insert themes"
+        "nano satellite"
+        "DIY culture"
     ]
 }
