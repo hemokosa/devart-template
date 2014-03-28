@@ -1,33 +1,36 @@
 # Project Title
-Insert the name of your project
+Arduino in Space - Mission OBC "Morikawa", ARTSAT1:INVADER
 
 ## Authors
-- Insert main author name, surname, github account
-- Insert other author(s) name, surname, github account (one per list element)
+- Junshi Horiguchi, toolbits
+- Ron Hashimoto, h2so5
+- Akihiro Kubota, hemokosa
 
 ## Description
-Insert a description containing about 100 to 150 words, including your motivation and the meaning behind your idea and execution. The Judges will be keen to know how your idea pushes the boundaries of code and technology. 
+"Morikawa" is an Arduino Mega compatible mission OBC for INVADER. INVADER is the first art satellite in the world launced on 27th Feb, 2014 as a piggyback satellite of H-IIA F23 rocket.
+
+We developed original libraries and application for Morikawa and they worked very well on orbit. The creative user program for Morikawa can be developed using familiar Arduino IDE. 
+
+We also developed original softwares for grand station of INVADER at Tama Art University (TamabiGS). They are written by oF. Tamabi GS can also provide telemetry data of INVADER through ARTSAT API (http://api.artsat.jp).
 
 ## Link to Prototype
-NOTE: If your project lives online you can add one or more links here. Make sure you have a stable version of your project running before linking it.
-
-[Example Link](http://www.google.com "Example Link")
+https://github.com/ARTSAT
+- MorikawaSDK: Arduino libraries for Morikawa
+- MorikawaApp: Sample programs for Morikawa (They are equipped on INVADER.)
+- iva: Simple assembler for INVADER VM, INVADER VM (http://goo.gl/UEJRd0) is implemeted as one of the above Morikawa App to reprogram Morikawa by uploading arbitrary bytecode from TamabiGS.
+- ground_station: Softwares for TamabiGS
+- ofxARTSATAPI: An openFrameworks addon to obtain INVADER's telemetry data.
 
 ## Example Code
-NOTE: Wrap your code blocks or any code citation by using ``` like the example below.
-```
-function test() {
-  console.log("Printing a test");
-}
-```
-## Links to External Libraries
- NOTE: You can also use this space to link to external libraries or Github repositories you used on your project.
+- included above sites
 
-[Example Link](http://www.google.com "Example Link")
+## Links to External Libraries
+
+http://artsat.jp/
+http://artsat.jp/invader/morikawa/
+http://www.facebook.com/artsat
 
 ## Images & Videos
-NOTE: For additional images you can either use a relative link to an image on this repo or an absolute link to an externally hosted image.
 
-![Example Image](project_images/cover.jpg?raw=true "Example Image")
-
-https://www.youtube.com/watch?v=30yGOxJJ2PQ
+http://dl.dropboxusercontent.com/u/1336163/AsMedia2.jpg
+http://vimeo.com/84771002
